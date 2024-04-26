@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+    <span style="padding-right: 10px;"> My Homepage</span>
+
+    <div class="spacer">
+        <button class="goBackBtn" color="accent" mat-flat-button (click)="goProvinces()">Provinces</button>
+    </div>
+    <button class="goBackBtn" mat-flat-button color="accent" (click)="goHome()" >Home</button>
+    <button class="goBackBtn" mat-flat-button color="warn" (click)="signOut()"> Sign Out </button>
+
+</mat-toolbar>
+
+<form >
+    <input style="font-weight: bold; font-size: 20px;" type="text" placeholder="Filter by city">
+    <button mat-flat-button color="accent">Search</button>
+    <section class="result">
+        <router-outlet></router-outlet>
+        <app-provinces [provinceDetails]="provinceDetails"></app-provinces>
+    </section>
+</form>
